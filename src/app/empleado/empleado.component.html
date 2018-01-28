@@ -1,0 +1,77 @@
+<h1 style="background:#303030;">{{nombre_empleado}}</h1>
+<h3 style="background:#303030;">Edad : {{edad}}</h3>
+<h3>Selector de colores</h3>
+<input type="text" [(ngModel)]="color_seleccionado"/>
+<pre [style.box-shadow]="color_seleccionado=='red' ? '0px 0px 1px 2px #ccc' : '0px 0px 2px 1px green'"
+     [ngClass]="{
+         fondoAzul: color_seleccionado == 'blue',
+         fondoVerde: color_seleccionado == 'green',
+         letraGrande: 1 == 1
+     }"
+>{{color_seleccionado}}</pre>
+<div [ngStyle]="{background:color_seleccionado,
+    'width':'200px',
+    'height':'200px',
+    'float':'right',
+    'margin-right':'70%'}">
+</div>
+<div style="clear:both;"></div>
+<br/>
+<hr/>
+<ul [ngSwitch]="color">
+    <li *ngSwitchCase="'red'" [ngStyle]="
+        {'background':color,'color':'white','padding':'30px'}">
+        Es Rojo {{color}}
+    </li>
+    <li *ngSwitchCase="'blue'" [ngStyle]="
+        {'background':color,'color':'white','padding':'30px'}">
+        Es Azul {{color}}
+    </li>
+    <li *ngSwitchCase="'yellow'" [ngStyle]="
+        {'background':color,'color':'white','padding':'30px'}">
+        Es Amarillo {{color}}
+    </li>
+
+</ul>
+
+
+<hr/>
+<div *ngIf="trabajador_externo == true">
+    <button (click)="cambiarExterno(false)">Mostrar Empleado</button>
+    <table border="1" class="table table-striped">
+        <tr>
+                <td>{{trabajadores[1].nombre}}</td>
+                <td>{{trabajadores[1].edad}}</td>
+                <td>{{trabajadores[1].cargo}}</td>
+                <td>{{trabajadores[1].contratado}}</td>
+        </tr>
+            
+    </table>
+</div>
+
+<div *ngIf="trabajador_externo == false">   
+    
+    <button (click)="cambiarExterno(true)">Mostrar Trabajador</button>
+    <table border="1" class="table table-striped">
+        <tr>
+                <td>{{empleado.nombre}}</td>
+                <td>{{empleado.edad}}</td>
+                <td>{{empleado.cargo}}</td>
+                <td>{{empleado.contratado}}</td>
+        </tr>            
+    </table>
+</div>
+
+
+<hr/>
+<ul>
+    <li *ngFor="let empleado of trabajadores; let i=index">
+        Empleado {{i}}:
+        <ul>            
+            <li>{{empleado.nombre}}</li>
+            <li>{{empleado.edad}}</li>
+            <li>{{empleado.cargo}}</li>
+            <li>{{empleado.contratado}}</li>            
+        </ul>
+    </li>
+</ul>

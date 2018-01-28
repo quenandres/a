@@ -1,0 +1,14 @@
+.fondoAzul{
+    background:rgb(113, 219, 252) !important;
+}
+.fondoVerde{
+    background:rgb(144, 236, 144) !important;
+}
+.letraGrande{
+    font-size: 28px;
+}
+.activado{
+    background:rgb(14, 14, 73);
+    color:#fff;
+    font-weight: bold;    
+}
