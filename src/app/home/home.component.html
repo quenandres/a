@@ -1,8 +1,14 @@
 <h2>{{titulo}}</h2>
 <br/>
+<h3>
+    Fecha: <span>{{fecha| date:'dd/MM/yyyy'}}</span>
+    <br/>
+    texto: <span>{{texto | uppercase | lowercase}}</span>
+</h3>
 
+<br/>
 <hr/>
-<h3>Listado de prendas</h3>
+<h3>Listado de prendas de </h3>
 <input type="text" [(ngModel)]="prenda_a_guardar"/>
 <button (click)="guardarPrenda()">Añadir prenda</button>
 <p *ngIf="prenda_a_guardar">la prenda a guardar es <strong>{{prenda_a_guardar}}</strong></p>

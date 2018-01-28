@@ -14,11 +14,16 @@ export class HomeComponent{
 
     public listado_ropa:Array<string>;
     public prenda_a_guardar:string;
+    public fecha;
+    public texto;
 
     constructor(
         private _ropaservice:RopaService,
         private _deporteservice:DeporteService
-    ){}
+    ){
+        this.fecha=new Date(2018,1,28);
+        this.texto="Soy un nuevo texto ctm";
+    }
 
     ngOnInit(){
         this.listado_ropa=this._ropaservice.getRopa();
