@@ -12,14 +12,26 @@ import {DeporteService} from '../services/deporte.service';
 export class HomeComponent{
     public titulo='Pagina Principal';
 
+    public listado_ropa:Array<string>;
+    public prenda_a_guardar:string;
+
     constructor(
         private _ropaservice:RopaService,
         private _deporteservice:DeporteService
     ){}
 
     ngOnInit(){
-        console.log(this._ropaservice.prueba());
-        console.log("No Privado "+this._deporteservice.deporte());
-        console.log("Privado "+this._deporteservice.deporte_privado());
+        this.listado_ropa=this._ropaservice.getRopa();
+        console.log(this.listado_ropa);        
+    }
+
+    guardarPrenda(){
+        this._ropaservice.addRopa(this.prenda_a_guardar);
+        this.prenda_a_guardar='';
+    }
+
+    eliminaPrenda(index:number){
+        console.log("prenda a eliminar "+index);
+        this._ropaservice.deleteRopa(index);
     }
 }

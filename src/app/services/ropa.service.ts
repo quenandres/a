@@ -9,8 +9,19 @@ export class RopaService {
   prueba(){
     return this.nombre_prenda;
   }
-  addRopa(nombrePrenda){
+
+  addRopa(nombrePrenda:string){
     this.coleccion_ropa.push(nombrePrenda);
+    this.getRopa();
+  }
+
+  getRopa(){
+    return this.coleccion_ropa;
+  }
+
+  deleteRopa(index:number){
+    this.coleccion_ropa.splice(index,1);
+    return this.getRopa();
   }
 
 }
