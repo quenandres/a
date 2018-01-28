@@ -20,4 +20,8 @@ export class ContactoComponent{
             this.parametro = params['page'];
         });
     }
+
+    redirigir(){
+        this._router.navigate(['/contacto','Jhonatan Mejia']);
+    } 
 }

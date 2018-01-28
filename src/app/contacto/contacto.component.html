@@ -4,3 +4,9 @@
     la ruta es: {{parametro}}
 
 </div>
+
+<div *ngIf="!parametro" ng-style="{background:#303030;}">
+    
+        <button (click)="redirigir()">ir a la pagina con parametro</button>
+    
+    </div>
