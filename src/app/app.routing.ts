@@ -8,6 +8,7 @@ import { EmpleadoComponent } from './empleado/empleado.component';
 import { FrutaComponent} from './fruta/fruta.component';
 import { HomeComponent } from './home/home.component';
 import { ContactoComponent } from './contacto/contacto.component';
+import { CochesComponent } from './coches/coches.component';
 
 const appRoutes: Routes=[
     {path:'',component: HomeComponent},
@@ -16,7 +17,9 @@ const appRoutes: Routes=[
     {path:'home',component:HomeComponent},
     {path:'contacto',component:ContactoComponent},
     {path:'contacto/:page',component:ContactoComponent},
-    {path:'**', component: HomeComponent}
+    {path:'coches',component:CochesComponent},
+    {path:'**', component: HomeComponent}//redireccion si la pagina no existe
+    
 ];
 
 export const appRoutingProviders:any[]=[];
