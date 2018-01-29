@@ -16,9 +16,6 @@ import { CochesComponent } from './coches/coches.component';
 //pipes
 import {ConversorPipe} from './pipes/conversor.pipe';
 
-//css
-import { Bootstrap } from '../node_modules/';
-
 
 @NgModule({
   declarations: [
